@@ -19,7 +19,17 @@ public class MongoTest extends AbstractTest {
     public void testConnect() {
         logger.info("测试开始");
         HtmlObject htmlObject = new HtmlObject();
-        htmlRepository.insert(htmlObject);;
+        htmlObject.setContent("测试");
+        htmlObject.setDowntime("111");
+        htmlObject.setUid("123");
+        htmlObject.setUrl("test");
+        htmlRepository.insert(htmlObject);
         logger.info("测试结束");
+    }
+    
+    @Test
+    public void testQuery(){
+        HtmlObject htmlObject = htmlRepository.findOne("123");
+        System.out.println(htmlObject.getContent());
     }
 }

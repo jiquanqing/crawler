@@ -25,6 +25,9 @@ public class CrawlerConfig {
     
     private String mongoCollectionName; //存储的集合名称
     
+    private Long sleepMills;    //暂停时间 毫秒
+    
+    
     
     
 
