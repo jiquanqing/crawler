@@ -1,5 +1,7 @@
 package com.qjq.crawler.domain;
 
+import java.util.List;
+
 /**
  * 
  * Description: TODO 配置
@@ -27,6 +29,8 @@ public class CrawlerConfig {
     private String mqName;      //发送的mq name
     
     private String jobId;       //根据抓取配置生成一个唯一的ID
+    
+    private List<String> torrentUrl;    //入口种子url
     
     public String getBaseUrl() {
         return baseUrl;
@@ -91,6 +95,14 @@ public class CrawlerConfig {
 
     public void setJobId(String jobId) {
         this.jobId = jobId;
+    }
+
+    public List<String> getTorrentUrl() {
+        return torrentUrl;
+    }
+
+    public void setTorrentUrl(List<String> torrentUrl) {
+        this.torrentUrl = torrentUrl;
     }
     
 }
