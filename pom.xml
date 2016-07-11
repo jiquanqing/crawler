@@ -8,13 +8,16 @@
 
 	<name>CrawlerService Maven Webapp</name>
 	<url>http://maven.apache.org</url>
-	
+
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<spring.version>4.1.2.RELEASE</spring.version>
 		<maven.compiler.source>1.7</maven.compiler.source><!-- compile插件 -->
 		<maven.compiler.target>1.7</maven.compiler.target><!-- compile插件 -->
 		<spring.security.version>3.1.0.RELEASE</spring.security.version>
+		<org.apache.activemq.version>5.9.0</org.apache.activemq.version>
+		<org.codehaus.jackson.version>1.9.13</org.codehaus.jackson.version>
+		<com.fasterxml.jackson.core.version>2.3.3</com.fasterxml.jackson.core.version>
 	</properties>
 
 	<dependencies>
@@ -67,7 +70,55 @@
 			<artifactId>spring-jdbc</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
-		
+
+		<!-- 提供JMS，Freemarker,Quartz集成服务 -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context-support</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+
+		<!-- 集成JMS -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jms</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+
+
+		<dependency>
+			<groupId>org.apache.activemq</groupId>
+			<artifactId>activemq-all</artifactId>
+			<version>${org.apache.activemq.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.activemq</groupId>
+			<artifactId>activemq-client</artifactId>
+			<version>${org.apache.activemq.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.activemq</groupId>
+			<artifactId>activemq-pool</artifactId>
+			<version>${org.apache.activemq.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.codehaus.jackson</groupId>
+			<artifactId>jackson-core-asl</artifactId>
+			<version>${org.codehaus.jackson.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.codehaus.jackson</groupId>
+			<artifactId>jackson-mapper-asl</artifactId>
+			<version>${org.codehaus.jackson.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>${com.fasterxml.jackson.core.version}</version>
+		</dependency>
+
+
 		<dependency>
 			<groupId>org.aspectj</groupId>
 			<artifactId>aspectjweaver</artifactId>
@@ -82,13 +133,20 @@
 		</dependency>
 
 
-	<!-- logger -->
+		<!-- logger -->
 		<dependency>
-    	 	<groupId>org.apache.logging.log4j</groupId>
-     		<artifactId>log4j-core</artifactId>
-     		<version>2.1</version>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-core</artifactId>
+			<version>2.1</version>
 		</dependency>
-		
+
+		<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-pool2 -->
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-pool2</artifactId>
+			<version>2.2</version>
+		</dependency>
+
 	</dependencies>
 
 	<repositories>

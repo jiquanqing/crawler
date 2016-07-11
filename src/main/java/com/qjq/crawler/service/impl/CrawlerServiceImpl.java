@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.qjq.crawler.domain.CrawlerConfig;
+import com.qjq.crawler.domain.CrawlerTypeEnum;
 import com.qjq.crawler.service.CrawlerService;
 import com.qjq.crawler.service.DonwloadService;
 
@@ -19,6 +20,12 @@ public class CrawlerServiceImpl implements CrawlerService {
 
     public void crawler(CrawlerConfig crawlerConfig) {
         logger.info("开始进行");
+        if (crawlerConfig != null) {
+            if (crawlerConfig.getCrawlerType() == CrawlerTypeEnum.horizontal.getId()) {
+                
+            }
+        }
     }
+    
 
 }
